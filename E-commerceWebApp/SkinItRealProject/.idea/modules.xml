@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SkinItRealWebParent/SkinItRealBackend/SkinItRealBackend.iml" filepath="$PROJECT_DIR$/SkinItRealWebParent/SkinItRealBackend/SkinItRealBackend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SkinItRealCommon/SkinItRealCommon.iml" filepath="$PROJECT_DIR$/SkinItRealCommon/SkinItRealCommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SkinItRealWebParent/SkinItRealFrontend/SkinItRealFrontend.iml" filepath="$PROJECT_DIR$/SkinItRealWebParent/SkinItRealFrontend/SkinItRealFrontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SkinItRealProject.iml" filepath="$PROJECT_DIR$/SkinItRealProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SkinItRealWebParent/SkinItRealWebParent.iml" filepath="$PROJECT_DIR$/SkinItRealWebParent/SkinItRealWebParent.iml" />
+    </modules>
+  </component>
+</project>

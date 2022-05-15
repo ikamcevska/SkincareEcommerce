@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head th:fragment="page_head(title)">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<title>[[${title}]]</title>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}"/>
+<script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script> 
+<script type="text/javascript" th:src="@{/js/common.js}"></script> 
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<style>
+a{
+color:black;
+}
+a:hover{
+color:#50ae8a;
+font-size:14px;
+}
+a{
+font-size:13px;
+}
+button{
+color:black;
+}
+</style> 
+</head>
+</head>
+<body>
+	<th th:fragment="column_link(moduleURL,fieldName,columnLabel)">
+	<a class="text-white"
+		th:href="@{${moduleURL}+'/page/' + ${currentPage} + '?sortField='+ ${fieldName} +'&sortDir=' +${sortField!=fieldName ? sortDir:reverseSortDir} }">
+		[[${columnLabel}]]</a>
+	<span th:if="${sortField==fieldName}"
+		th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
+</th>
+<a th:fragment="page_link(pageNum,label)"
+	class="page-link"
+	th:href="@{'/users/page/' +${pageNum} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${label}]]</a>
+	
+	<div th:fragment="status(enabled, entityName, entityURL)" th:remove="tag">
+		<a th:if="${enabled == true}" class="fas fa-check-circle fa-2x icon-green" 
+			th:href="@{${entityURL} + '/enabled/false'}"
+			th:title="'Disable this ' + ${entityName}"
+			></a>
+			
+		<a th:if="${enabled == false}" class="fas fa-circle fa-2x icon-dark" 
+			th:href="@{${entityURL} + '/enabled/true'}"
+			th:title="'Enable this ' + ${entityName}"
+			></a>	
+	</div>
+	
+	<div th:fragment="edit(entityName, editURL)" th:remove="tag">
+		<a class="fas fa-edit fa-2x icon-green" th:href="@{${editURL}}"
+			th:title="'Edit this ' + ${entityName}"></a>
+	</div>
+	
+	<div th:fragment="delete(entityName, entityId, deleteURL, visible)" th:remove="tag">
+		<th:block th:if="${visible}">		
+		<a class="fas fa-trash fa-2x icon-dark link-delete" 
+			th:href="@{${deleteURL}}"
+			th:entityId="${entityId}"
+			th:title="'Delete this ' + ${entityName}"></a>
+		</th:block>	
+	</div>
+	<div th:fragment="category_actions" th:remove="tag">
+		<a class="fas fa-edit fa-2x icon-green" th:href="@{'/categories/edit/'+ ${cat.id}}"
+		title="Edit this category"></a>
+		&nbsp;
+		<th:block th:if="${cat.hasChildren==false}">
+			<a class="fas fa-trash fa-2x icon-dark link-delete"
+			th:href="@{'/categories/delete/' + ${cat.id}}"
+			th:entityId="${cat.id}"
+			title="Delete this category"></a>
+		</th:block>
+		<div th:fragment="category_status" th:remove="tag">
+	<a th:if="${cat.enabled==true}" class="fas fa-check-circle fa-2x icon-green"
+	th:href="@{'/categories/' + ${cat.id} + '/enabled/false'}"
+	title="Disable this category"
+	></a>
+
+	<a th:if="${cat.enabled==false}" class="fas fa-circle fa-2x icon-dark"
+	th:href="@{'/categories/ + ${cat.id}+ '/enabled/true'}"
+	title="Enable this category"
+	></a>
+</div>
+		
+		</div>
+	<div th:fragment="brand_actions" th:remove="tag">
+		<a class="fas fa-edit fa-2x icon-green" th:href="@{'/brands/edit/'+ ${brand.id}}"
+		title="Edit this brand"></a>
+		&nbsp;
+			<a class="fas fa-trash fa-2x icon-dark link-delete"
+			th:href="@{'/brands/delete/' + ${brand.id}}"
+			th:entityId="${brand.id}"
+			title="Delete this brand"></a>
+		
+	</div>
+	<div th:fragment="product_actions" th:remove="tag">
+		<a class="fas fa-edit fa-2x icon-green" th:href="@{'/products/edit/'+ ${product.id}}"
+		title="Edit this brand"></a>
+		&nbsp;
+			<a class="fas fa-trash fa-2x icon-dark link-delete"
+			th:href="@{'/products/delete/' + ${product.id}}"
+			th:entityId="${product.id}"
+			title="Delete this product"></a>
+		
+	</div>
+<div th:fragment="footer" class="text-center m-3" >
+<p>SkinItReal Control Pane - Copyright &copy; SkinItReal</p>
+</div>
+
+</body>
+</html>

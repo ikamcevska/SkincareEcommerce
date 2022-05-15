@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('SkinItReal')" >
+</head>
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: header_menu"></div>
+	<div>
+		<h1>Shopping by Categories</h1>
+	</div>
+	<div class="row" th:each="cat : ${listCategories}">
+		<a class="col" th:href="@{'/c/' + ${cat.alias}}"><h4>[[${cat.name}]]</h4></a>
+	</div>
+		
+
+	
+	
+	<div th:replace="navigation :: footer_menu"></div>
+</div>	
+</body>
+</html>

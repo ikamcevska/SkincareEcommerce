@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<title>Login Page</title>
+<style>
+img,div{
+display:block;
+margin:auto;
+}
+p{
+text-align:center;
+}
+.button
+{
+    font-size: 13px;
+    background-color:#af5175;
+    color:white;
+    width:70px;
+    margin-left:132px;
+   
+}
+
+
+
+
+</style>
+
+<body>
+<div style="margin-top:30px"></div>
+<div style="border:solid black;max-width:350px;margin:0 auto">
+	<div>
+		<img th:src="@{/images/LogoMakr-8cFXZN.png}"/>
+	</div>
+	<form th:action="@{/login}" method="post">
+		<div th:if="${param.logout}">
+			<p>You have been logged out.</p>
+		</div>
+		<div style="padding:2px">
+			<p>
+				<input type="email" name="email" placeholder="E-mail" style="padding:3px;margin:3px"required/>
+				<input type="password" name="password" placeholder="Password" style="padding:3px;margin:3px" required/>
+				<br/>
+				<p><input type="checkbox" name="remember-me"/>&nbsp;Remember me</p>
+				<input type="submit" value="login" class="button"/>
+			</p>
+	
+		</div>
+	</form>
+</div>
+<p class="footr">SkinItReal Control Panel - Copyright &copy; SkinItReal</p>
+</body>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<body>
+<div th:fragment="header_menu">
+	<nav class="navbar navbar-expand-lg ">
+	<a class="navbar-brand" th:href="@{/}">
+	<img th:src="@{/images/lg-sm.png}"/>
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar">
+	<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="topNavBar">
+		<ul class="navbar-nav">
+			<li>
+				<a class="nav-link" href="">Careers</a>
+				</li>
+				<li>
+				<a class="nav-link" href="">Payments</a>
+				</li>
+				<li>
+				<a class="nav-link" href="">Shipping &amp; Delivery</a>
+				</li>
+				<li>
+				<a class="nav-link" href="">Login</a>
+				</li>
+				<li>
+				<a class="nav-link" href="">Register</a>
+				</li>
+				<li>
+				<a class="nav-link" href="">Contact</a>
+				</li>
+		</ul>
+	</div>
+	</nav>
+</div>
+<div th:fragment="footer_menu">
+	<div>
+	<nav class="navbar navbar-expand-lg ">
+	
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bottomNavbar">
+	<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="bottomNavBar">
+		<ul class="navbar-nav">
+			<li>
+				<a class="nav-link" href="">About us</a>
+				</li>
+				<li>
+				<a class="nav-link" href="">Privacy Notice</a>
+				</li>
+				<li>
+				<a class="nav-link" href="">Returns &amp; Refunds</a>
+				</li>
+		</ul>
+	</div>
+	</nav>
+	</div>
+	<div th:fragment="footer" class="text-center m-3">
+ 	<p>SkinItReal - Copyright &copy; SkinItReal</p>
+ </div>
+</div>
+</body>
+</html>

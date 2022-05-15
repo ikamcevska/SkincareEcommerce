@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<div th:fragment="content" th:remove="tag">
+	<div>
+		<p>
+			Page for managing countries that will be displayed in the customer registration form.
+		</p>
+	</div>
+	<div>
+		<input type="button" value="Load Country List" id="buttonLoadCountries" class="btn btn-primary m-2"/>
+	</div>
+	<div>
+		<select class="form-control m-2" style="height:300px" size="3" id="dropDownCountries">
+		</select>
+	</div>
+	<div class="form-group row">
+		<label class="col-form-label" id="labelCountryName">Country Name:</label>
+		<div class="col-sm">
+			<input type="text" class="form-control" id="fieldCountryName"/>
+		</div>
+		<label class="col-form-label">Code:</label>
+		<div class="col-md">
+			<input type="text" class="form-control" id="fieldCountryCode"/>
+		</div>
+		<div class="col-lg-4">
+			<input type="button" id="buttonAddCountry" value="New" class="btn btn-secondary"/>
+			<input type="button" id="buttonUpdateCountry" value="Update" class="btn btn-secondary" disabled="disabled"/>
+			<input type="button" id="buttonDeleteCountry" value="Delete" class="btn btn-secondary" disabled="disabled"/>
+		</div>
+	</div>
+</div>
+</body>

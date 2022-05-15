@@ -1,0 +1,5 @@
+package com.skin.common.entity;
+
+public class Customer {
+
+}

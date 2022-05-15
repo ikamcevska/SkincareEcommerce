@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<title>Login - SkinItReal</title>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/fontawesome/all.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+<script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script> 
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+</head>
+<body>
+<div class="container-fluid text-center">
+	<div>
+<img th:src="@{/images/LogoMakr-8cFXZN.png}"/>
+	</div>
+
+<form th:action="@{/login}" method="post">
+	<div class="border border-secondary">
+		<p>Acccess to SkinItReal Control Panel</p>
+	</div>
+</form>
+<div>
+<p>SkinItReal Control Pane - Copyright &copy; SkinItReal</p>
+</div>
+</div>
+</body>
+</html>
